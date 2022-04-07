@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title> Ferry Ardianto Lim - 06311940000050</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        const labels = [
+          0,1,2,3
+        ];
+      
+        const data = {
+          labels: labels,
+          datasets: [{
+            label: 'Achievement',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [11, 414, 312, 215],
+          }]
+        };
+       
+        
+      
+        const config = {
+        type: 'line',
+        data: data,
+        
+  options: {
+    responsive: true,
+    scales: {
+      y: {
+        display: true,
+        title: {
+          display: true,
+          text: 'Count of Astronauts',
+          padding: {top: 20, left: 0, right: 0, bottom: 0}
+        }
+      },
+      x: {
+        display: true,
+        title: {
+          display: true,
+          text: 'Count of Achievements',
+          padding: {top: 30, left: 0, right: 0, bottom: 0}
+        }
+      }
+    }
+  }
+        ,plugins: {
+        filler: {
+        propagate: false,
+      },
+        title: {
+        display: true,
+        text: (ctx) => 'Achievement Distribution Amongst Astronauts Around The World' 
+      }
+    },
+    interaction: {
+      intersect: false,
+    }
+  }
+;
+
+  
+      </script>
+ 
+ <script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script>
+
+</body>
+
+</html>
